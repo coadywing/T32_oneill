@@ -9,6 +9,7 @@ temp_data/
 literature/**
 !literature/**/
 !literature/**/README.md
+!literature/**/*.md
 
 # Lab journal (local session tracking)
 lab_journal.md
@@ -58,3 +59,17 @@ manuscript/*.out
 manuscript/*.run.xml
 manuscript/*.synctex.gz
 manuscript/*.toc
+
+# Proposal build artifacts
+build/
+proposal/*.aux
+proposal/*.bbl
+proposal/*.bcf
+proposal/*.blg
+proposal/*.fdb_latexmk
+proposal/*.fls
+proposal/*.log
+proposal/*.out
+proposal/*.run.xml
+proposal/*.synctex.gz
+proposal/*.toc

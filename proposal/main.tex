@@ -1,0 +1,108 @@
+% main.tex — Master document for NIA T32 Grant Proposal (PA-25-168)
+% O'Neill School of Public and Environmental Affairs, Indiana University
+%
+% T32 APPLICATION STRUCTURE (differs from R01):
+%   - No separate Specific Aims page
+%   - Research Training Program Plan (25 pages) is the main narrative
+%   - Separate attachments: Diversity (3p), RCR (3p), Reproducibility (3p),
+%     Facilities (no limit)
+%   - Data Tables, Biosketches, Letters of Support are separate forms
+%
+% Compile from project root:
+%   latexmk -pdfxe proposal/main.tex
+%
+% Or via Makefile:
+%   make -C proposal/pandoc pdf
+
+\documentclass[11pt]{article}
+\usepackage{preamble_code/nih-t32}
+
+% ---------------------------------------------------------------
+% Conditional compilation toggles for page-count checking.
+% By default, all sections are included.
+%
+% To compile only the Program Plan (to check 25-page limit):
+%   \togglefalse{compileall}
+%   \toggletrue{programplan}
+% ---------------------------------------------------------------
+\newtoggle{programplan}
+\newtoggle{diversity}
+\newtoggle{rcr}
+\newtoggle{reproducibility}
+\newtoggle{facilities}
+
+% Default: compile everything
+\toggletrue{programplan}
+\toggletrue{diversity}
+\toggletrue{rcr}
+\toggletrue{reproducibility}
+\toggletrue{facilities}
+
+\begin{document}
+
+% ===============================================================
+% RESEARCH TRAINING PROGRAM PLAN (25 pages — main narrative)
+%
+% This is the core of the T32 application. All sections below
+% count toward the 25-page limit. Program goals and objectives
+% open the Background section (no separate Specific Aims page).
+% ===============================================================
+\iftoggle{programplan}{%
+  \iftoggle{compileall}{}{\setcounter{page}{1}}
+  \input{01_background}
+  \input{02_program_admin}
+  \input{03_program_faculty}
+  \input{04_proposed_training}
+  \input{05_program_evaluation}
+  \input{06_trainee_candidates}
+  \input{07_institutional_environment}
+  \input{08_training_outcomes}
+  \iftoggle{compileall}{\newpage}{}
+}{}
+
+% ===============================================================
+% RECRUITMENT PLAN TO ENHANCE DIVERSITY (3 pages — separate)
+% New as of January 2025; now contributes to overall impact score.
+% ===============================================================
+\iftoggle{diversity}{%
+  \iftoggle{compileall}{}{\setcounter{page}{1}}
+  \input{09_diversity_recruitment}
+  \iftoggle{compileall}{\newpage}{}
+}{}
+
+% ===============================================================
+% RESPONSIBLE CONDUCT OF RESEARCH (3 pages — separate)
+% Now contributes to overall impact score.
+% ===============================================================
+\iftoggle{rcr}{%
+  \iftoggle{compileall}{}{\setcounter{page}{1}}
+  \input{10_rcr_plan}
+  \iftoggle{compileall}{\newpage}{}
+}{}
+
+% ===============================================================
+% METHODS FOR ENHANCING REPRODUCIBILITY (3 pages — separate)
+% ===============================================================
+\iftoggle{reproducibility}{%
+  \iftoggle{compileall}{}{\setcounter{page}{1}}
+  \input{12_reproducibility}
+  \iftoggle{compileall}{\newpage}{}
+}{}
+
+% ===============================================================
+% FACILITIES AND OTHER RESOURCES (no page limit — separate)
+% ===============================================================
+\iftoggle{facilities}{%
+  \iftoggle{compileall}{}{\setcounter{page}{1}}
+  \input{11_facilities_resources}
+}{}
+
+% ===============================================================
+% BIBLIOGRAPHY
+% ===============================================================
+\iftoggle{compileall}{%
+  \newpage
+  \bibliography{references}
+}{}
+
+\end{document}

@@ -1,10 +1,4 @@
-# CLAUDE.md — Project Workflow Template
-
-**Last Updated:** [DATE]
-**Project:** [PROJECT NAME]
-**Type:** [research / teaching]
-**Institution:** [YOUR INSTITUTION]
-**Working Branch:** main
+# CLAUDE.md 
 
 ---
 
@@ -13,6 +7,8 @@
 | Command | What It Does |
 |---------|-------------|
 | `/compile-paper` | Compile LaTeX manuscript (latexmk + biber) |
+| `/convert-proposal` | Build PDF and/or Word from LaTeX proposal |
+| `/review-grant` | Full grant review (compliance + study section + proofread) |
 | `/run-pipeline` | Run main.r and verify all outputs |
 | `/proofread [filename]` | Grammar, typo, and consistency review |
 | `/review-r [file]` | R code quality and reproducibility review |
@@ -20,7 +16,7 @@
 | `/validate-bib` | Cross-reference citations vs bibliography |
 | `/devils-advocate` | Challenge design decisions |
 
-**Agents** (for delegation): `proofreader`, `r-reviewer`, `pedagogy-reviewer`, `verifier`, `domain-reviewer`, `slide-auditor`
+**Agents** (for delegation): `proofreader`, `r-reviewer`, `pedagogy-reviewer`, `verifier`, `domain-reviewer`, `slide-auditor`, `t32-compliance-checker`, `nih-study-section-reviewer`
 
 **Rules** (auto-loaded): See `.claude/rules/` for workflow, R code, quality gates, and verification protocols.
 
@@ -28,9 +24,9 @@
 
 ## Project Overview
 
-<!-- Describe your project in 2-3 sentences. What question does it answer? -->
+The O'Neill School of Public and Environmental Affairs at Indiana University Bloomington is proposing to host an NIA T32 Institutional Training Grant to prepare pre-doctoral students and post-doctoral fellows for research careers in health economics and policy affecting older adults. 
 
-[DESCRIBE YOUR PROJECT HERE]
+The program addresses NIA's strategic priorities by training researchers to apply rigorous econometric methods to critical questions about Medicare and Medicaid policy, long-term care financing, dementia caregiving, and healthcare access for aging populations. The main task is to write the proposal
 
 ---
 

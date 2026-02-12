@@ -33,6 +33,11 @@
 
       "Bash(quarto render *)",
 
+      "Bash(pandoc *)",
+      "Bash(make -C proposal *)",
+      "Bash(make -C proposal/pandoc *)",
+      "Bash(pdfinfo *)",
+
       "Bash(chmod *)",
       "Bash(open *)",
       "Bash(ls *)",
