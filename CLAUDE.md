@@ -16,7 +16,7 @@
 | `/validate-bib` | Cross-reference citations vs bibliography |
 | `/devils-advocate` | Challenge design decisions |
 
-**Agents** (for delegation): `proofreader`, `r-reviewer`, `pedagogy-reviewer`, `verifier`, `domain-reviewer`, `slide-auditor`, `t32-compliance-checker`, `nih-study-section-reviewer`
+**Agents** (for delegation): `proofreader`, `r-reviewer`, `pedagogy-reviewer`, `verifier`, `domain-reviewer`, `slide-auditor`, `t32-compliance-checker`, `nih-study-section-reviewer`, `r01-study-section-reviewer`
 
 **Rules** (auto-loaded): See `.claude/rules/` for workflow, R code, quality gates, and verification protocols.
 
