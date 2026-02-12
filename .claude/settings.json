@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git branch *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git pull *)",
+      "Bash(git fetch *)",
+      "Bash(git checkout *)",
+      "Bash(git merge *)",
+      "Bash(git stash *)",
+      "Bash(gh pr *)",
+      "Bash(gh run *)",
+      "Bash(gh api *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr merge *)",
+      "Bash(gh pr create *)",
+      "Bash(gh repo *)",
+
+      "Bash(Rscript *)",
+      "Bash(python3 *)",
+
+      "Bash(latexmk *)",
+      "Bash(xelatex *)",
+      "Bash(biber *)",
+      "Bash(bibtex *)",
+      "Bash(pdfinfo *)",
+
+      "Bash(quarto render *)",
+
+      "Bash(chmod *)",
+      "Bash(open *)",
+      "Bash(ls *)",
+      "Bash(wc *)",
+      "Bash(mkdir *)"
+    ]
+  }
+}

@@ -1,0 +1,381 @@
+/*-- scss:defaults --*/
+
+// =============================================================================
+// SLATE TEAL — Modern Cool Theme
+// Spartan academic RevealJS theme. Deep slate structure, bright teal accents.
+// =============================================================================
+
+// ---------------------------------------------------------------------------
+// Colors
+// ---------------------------------------------------------------------------
+
+$slate: #2C3E50;      // Deep blue-grey — headings, structure
+$teal: #0D9488;       // Teal-600 — bright, pops against slate
+$dark-slate: #1E293B; // Body text — softer than pure black
+
+$accent: $teal;
+$accent2: $slate;
+
+$right-arrow: "\2192";
+
+// Bullet spacing
+$bullet-gap: 7px;
+$list-indent: 16px;
+
+// ---------------------------------------------------------------------------
+// Typography
+// ---------------------------------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, sans-serif !default;
+$presentation-heading-font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif !default;
+
+$presentation-heading-color: $slate;
+$presentation-heading-font-weight: 300;
+$presentation-font-size-root: 32px;
+
+$body-color: $dark-slate !default;
+$link-color: $accent !default;
+$selection-bg: #134e4a !default;
+
+
+/*-- scss:rules --*/
+
+// ---------------------------------------------------------------------------
+// Base text
+// ---------------------------------------------------------------------------
+
+.reveal a {
+  line-height: 1.5em;
+}
+
+.reveal p {
+  font-weight: 300;
+  margin-top: 1.25em;
+}
+
+// ---------------------------------------------------------------------------
+// Utility classes
+// ---------------------------------------------------------------------------
+
+.accent {
+  color: $accent;
+}
+
+.accent2 {
+  color: $accent2;
+}
+
+.alert {
+  color: $accent2;
+}
+
+.alert2 {
+  color: $accent;
+}
+
+.fg {
+  color: var(--col, $dark-slate);
+}
+
+.bg {
+  background-color: var(--col, #fff);
+  padding: 0.1em;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+// ---------------------------------------------------------------------------
+// Title slide
+// ---------------------------------------------------------------------------
+
+#title-slide {
+  text-align: left;
+
+  .title {
+    color: $slate;
+    font-size: 1.4em;
+    font-weight: 300;
+  }
+
+  .subtitle {
+    color: $teal;
+    font-style: italic;
+    margin-top: 0em;
+    font-weight: 300;
+  }
+
+  .institute,
+  .quarto-title-affiliation,
+  .quarto-title-author-email {
+    font-style: italic;
+  }
+
+  .author,
+  .quarto-title-author-name {
+    color: $body-color;
+  }
+
+  .quarto-title-authors {
+    display: flex;
+    justify-content: left;
+
+    .quarto-title-author {
+      padding-left: 0em;
+      padding-right: 0em;
+      width: 100%;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Headings
+// ---------------------------------------------------------------------------
+
+.reveal h2 {
+  font-weight: 300;
+  font-size: 1.4em;
+}
+
+.reveal h3 {
+  color: $teal;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.0em;
+}
+
+.reveal h4 {
+  color: $slate;
+  font-weight: 400;
+  margin-top: 1.25em;
+}
+
+// ---------------------------------------------------------------------------
+// Lists
+// ---------------------------------------------------------------------------
+
+// Unordered: dash markers
+.reveal ul {
+  font-weight: 300;
+  list-style: none;
+  padding-left: $list-indent + $bullet-gap;
+}
+
+.reveal ul > li {
+  position: relative;
+  margin: .2em 0;
+}
+
+.reveal ul > li::before {
+  content: "–";
+  position: absolute;
+  left: -($list-indent + $bullet-gap);
+  top: .05em;
+  color: mix($slate, white, 55%);
+  font-weight: 400;
+}
+
+// Nested: arrow markers
+.reveal ul ul {
+  list-style: none;
+  padding-left: $list-indent + $bullet-gap + 12px;
+
+  li {
+    position: relative;
+  }
+
+  li::before {
+    content: $right-arrow;
+    position: absolute;
+    left: -($list-indent + $bullet-gap + 12px);
+    top: .05em;
+    color: mix($teal, white, 60%);
+    font-weight: 400;
+  }
+}
+
+// Ordered
+.reveal ol {
+  font-weight: 300;
+  padding-left: 16px;
+
+  li::marker {
+    color: $teal;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Code blocks
+// ---------------------------------------------------------------------------
+
+.reveal pre {
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 0.75em 1em;
+  font-size: 0.75em;
+}
+
+.reveal code {
+  font-family: "SF Mono", "Fira Code", Consolas, monospace;
+}
+
+.reveal p code,
+.reveal li code {
+  background-color: #f1f5f9;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+// ---------------------------------------------------------------------------
+// Tables
+// ---------------------------------------------------------------------------
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 0.8em;
+}
+
+.reveal table th,
+.reveal table td {
+  border: none;
+  padding: .23em;
+  text-align: left;
+  font-weight: 300;
+}
+
+.reveal table thead th,
+.reveal .slides table tr:last-child td,
+.reveal .slides table {
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.reveal table thead th {
+  font-weight: 600;
+  color: $slate;
+}
+
+.reveal table caption {
+  color: #64748b;
+  font-variant: small-caps;
+}
+
+// ---------------------------------------------------------------------------
+// Etable (fixest image tables)
+// ---------------------------------------------------------------------------
+
+.etable {
+  width: 100%;
+  height: calc(100% - 3em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.etable img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+// ---------------------------------------------------------------------------
+// UI elements: menu, chalkboard, logo, slide numbers
+// ---------------------------------------------------------------------------
+
+.reveal .slide-menu-button {
+  position: fixed;
+  top: 6px;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.reveal .slide-menu-button > * {
+  pointer-events: auto;
+}
+
+.reveal .slide-chalkboard-buttons {
+  position: fixed;
+  top: 12px;
+  right: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.reveal .slide-chalkboard-buttons > * {
+  pointer-events: auto;
+}
+
+.slide-logo {
+  display: block !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 10px !important;
+  max-width: 150px;
+  max-height: 50px;
+  width: auto !important;
+  color: $body-color !important;
+}
+
+.slide-number, .reveal.has-logo .slide-number {
+  bottom: 6px !important;
+  right: 10px !important;
+  top: unset !important;
+  color: #94a3b8 !important;
+}
+
+// ---------------------------------------------------------------------------
+// Button (beamer-style link)
+// ---------------------------------------------------------------------------
+
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $teal;
+  border: 1px solid $teal;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: darken($teal, 10%);
+  border-color: darken($teal, 10%);
+}
+
+.button::before {
+  content: "▶";
+  margin-right: 5px;
+}
+
+// ---------------------------------------------------------------------------
+// Column width classes (for output-location: column)
+// ---------------------------------------------------------------------------
+
+.reveal .columns3070 > div.column:first-child { width: 30%; }
+.reveal .columns3070 div.column:not(:first-child) { width: 70%; }
+.reveal .columns7030 > div.column:first-child { width: 70%; }
+.reveal .columns7030 div.column:not(:first-child) { width: 30%; }
+.reveal .columns4060 > div.column:first-child { width: 40%; }
+.reveal .columns4060 div.column:not(:first-child) { width: 60%; }
+.reveal .columns6040 > div.column:first-child { width: 60%; }
+.reveal .columns6040 div.column:not(:first-child) { width: 40%; }

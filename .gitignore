@@ -1,0 +1,60 @@
+# Data (too large for git, users add manually)
+# Track README.md files but ignore actual data
+raw_data/**
+!raw_data/**/
+!raw_data/**/README.md
+temp_data/
+
+# Literature (reference PDFs, too large for git)
+literature/**
+!literature/**/
+!literature/**/README.md
+
+# Lab journal (local session tracking)
+lab_journal.md
+
+# R artifacts
+.Rhistory
+.Rdata
+.RData
+*.Rproj.user/
+.Rproj.user
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude local settings (machine-specific)
+.claude/settings.local.json
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# LaTeX build artifacts (root-level, from latexmk -pdf manuscript/main.tex)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+main.pdf
+
+# LaTeX build artifacts (manuscript-level, belt and suspenders)
+manuscript/*.aux
+manuscript/*.bbl
+manuscript/*.bcf
+manuscript/*.blg
+manuscript/*.fdb_latexmk
+manuscript/*.fls
+manuscript/*.log
+manuscript/*.out
+manuscript/*.run.xml
+manuscript/*.synctex.gz
+manuscript/*.toc

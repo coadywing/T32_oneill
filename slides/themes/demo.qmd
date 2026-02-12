@@ -1,0 +1,153 @@
+---
+title: "Theme Demo"
+subtitle: "Testing All the Things"
+author: "Coady Wing"
+format:
+  revealjs:
+    # ── Switch themes by commenting/uncommenting one line ──
+    theme: [default, clean.scss]
+    # theme: [default, crimson_and_cream.scss]
+    # theme: [default, slate_teal.scss]
+    scrollable: true
+    slide-number: true
+    embed-resources: true
+editor:
+  markdown:
+    wrap: 72
+---
+
+## Heading Level 2
+
+This is body text under an h2 heading. The font should be light
+(weight 300) and easy to read at presentation distance.
+
+### This is an h3 — italic accent color
+
+Body text continues here after the h3 subheading.
+
+#### And an h4 heading
+
+Still more body text. Notice the color hierarchy: h2 uses the
+primary color, h3 uses the accent, h4 returns to primary.
+
+## Bullet Lists
+
+- First-level bullet with a dash marker
+- Another first-level item
+  - Nested item with an arrow marker
+  - Another nested item
+- Back to first level
+
+## Ordered Lists
+
+1. First ordered item
+2. Second ordered item
+3. Third ordered item
+
+## Mixed Content
+
+- An unordered list item
+  - With a nested sub-item
+
+Here is a paragraph between lists.
+
+1. Then an ordered list
+2. With numbered items
+
+## Inline Code and Code Blocks
+
+Use `library(fixest)` to load the package. The function
+`feols()` estimates fixed-effects models.
+
+```r
+library(fixest)
+library(data.table)
+
+# Estimate a simple model
+dt <- fread("data.csv")
+est <- feols(y ~ x1 + x2 | fe1 + fe2, data = dt)
+summary(est)
+```
+
+## Mathematics
+
+Inline math: The utility function is $u(c) = \log(c)$.
+
+Display math:
+
+$$
+E[u(c)] = p_l \cdot u(c_l) + (1 - p_l) \cdot u(c_h)
+$$
+
+A multi-line derivation:
+
+$$
+\begin{align*}
+  \frac{dW}{db} &= (1-e)\left[u_l'(c_l)
+    - \left(1 - \frac{\epsilon}{e}\right) u_h'(c_h)\right] \\
+  M_{W(b)} &= \frac{u_l'(c_l) - u_h'(c_h)}{u_h'(c_h)}
+    - \frac{\epsilon}{e}
+\end{align*}
+$$
+
+## Tables
+
+| Variable | Coefficient | Std. Error |
+|----------|:-----------:|:----------:|
+| $x_1$   | 0.342       | 0.051      |
+| $x_2$   | -0.118      | 0.023      |
+| $x_3$   | 0.067       | 0.015      |
+
+: Regression Results
+
+## Utility Classes
+
+[This text is in the accent color.]{.accent}
+
+[This text is in the secondary accent color.]{.accent2}
+
+[This is an alert.]{.alert}
+
+[This is alert2.]{.alert2}
+
+[Custom color via .fg]{.fg style="--col: #6A3D9A;"}
+
+[Highlighted background]{.bg style="--col: #FFFACD;"}
+
+## Section Divider {.center}
+
+These slides use `.center` class for part dividers, often
+styled with inline color overrides.
+
+## Two-Column Layout
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Left column**
+
+- Point one
+- Point two
+- Point three
+:::
+
+::: {.column width="50%"}
+**Right column**
+
+1. Step one
+2. Step two
+3. Step three
+:::
+
+::::
+
+## Links and Buttons
+
+Here is a [hyperlink to something](#) in the accent color.
+
+[Button Example](#){.button}
+
+## That's It
+
+Three themes, one structure. Switch by changing one line in
+the YAML header.

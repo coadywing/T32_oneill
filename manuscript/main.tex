@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage{manuscript/preamble_code/paper}
+\usepackage{manuscript/preamble_code/math}
+\addbibresource{manuscript/references.bib}
+
+\title{Paper Title}
+\author{Author Name \\ Institution}
+
+% Import macros with inline results from R pipeline.
+% Uncomment after running code/06_export_results_tex.r:
+% \input{outputs/tables/result_numbers}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\begin{abstract}
+    \input{manuscript/0_abstract}
+\end{abstract}
+
+\textbf{}\newpage
+\setcounter{page}{1}
+
+\section{Introduction}
+\input{manuscript/1_introduction}
+
+\section{Data}
+\input{manuscript/2_data}
+
+\section{Methods}
+\input{manuscript/3_methods}
+
+\section{Results}
+\input{manuscript/4_results}
+
+\section{Discussion}
+\input{manuscript/5_discussion}
+
+\clearpage
+\input{manuscript/6_exhibits}
+
+\newpage
+\printbibliography
+
+\appendix
+\clearpage
+
+\setcounter{figure}{0} \renewcommand{\thefigure}{A.\arabic{figure}}
+\setcounter{table}{0} \renewcommand{\thetable}{A.\arabic{table}}
+
+\input{manuscript/7_appendix}
+\clearpage{}
+
+\end{document}
